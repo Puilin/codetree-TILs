@@ -8,10 +8,11 @@
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-1|50xp|1일째🔥|
+2|50xp|1일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
+|[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[연습]최대로 겹치는 지점](https://www.codetree.ai/missions/5/problems/maximum-overlapped-points)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/Puilin/codetree-TILs/blob/main/231113/%EC%B5%9C%EB%8C%80%EB%A1%9C%20%EA%B2%B9%EC%B9%98%EB%8A%94%20%EC%A7%80%EC%A0%90/maximum-overlapped-points.py)|
 |[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[연습]왔다 갔던 구역 2](https://www.codetree.ai/missions/5/problems/area-been-to-and-from2)|![보통][medium]|![Passed][passed]|[링크](https://github.com/Puilin/codetree-TILs/blob/main/231113/%EC%99%94%EB%8B%A4%20%EA%B0%94%EB%8D%98%20%EA%B5%AC%EC%97%AD%202/area-been-to-and-from2.py)|
 
 
