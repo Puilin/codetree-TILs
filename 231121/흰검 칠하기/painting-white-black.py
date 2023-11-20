@@ -5,7 +5,7 @@ black_count = [0 for _ in range(200001)]
 white_count = [0 for _ in range(200001)]
 
 def check_gray(cursor):
-    return black_count[cursor] == 2 and white_count[cursor] == 2
+    return black_count[cursor] >= 2 and white_count[cursor] >= 2
 
 def print_tile(cursor, direction):
     now = arr[cursor]
