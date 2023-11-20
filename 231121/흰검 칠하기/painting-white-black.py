@@ -1,23 +1,26 @@
 n = int(input())
 
 arr = ['N' for _ in range(200001)]
-change_count = [0 for _ in range(200001)]
+black_count = [0 for _ in range(200001)]
+white_count = [0 for _ in range(200001)]
+
+def check_gray(cursor):
+    return black_count[cursor] == 2 and white_count[cursor] == 2
 
 def print_tile(cursor, direction):
     now = arr[cursor]
-    changed_num = change_count[cursor]
     if direction == 'L':
-        if changed_num <= 2:
+        white_count[cursor] += 1
+        if check_gray(cursor):
+            arr[cursor] = 'G'
+        else:
             arr[cursor] = 'W'
-            change_count[cursor] += 1
-        else:
-            arr[cursor] = 'G'
     else: # 'R'
-        if changed_num <= 2:
-            arr[cursor] = 'B'
-            change_count[cursor] += 1
-        else:
+        black_count[cursor] += 1
+        if check_gray(cursor):
             arr[cursor] = 'G'
+        else:
+            arr[cursor] = 'B'
 
 cursor = 100000
 for _ in range(n):
