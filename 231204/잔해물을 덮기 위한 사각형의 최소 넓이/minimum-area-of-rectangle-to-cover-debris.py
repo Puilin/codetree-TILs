@@ -1,7 +1,7 @@
 def setting(str):
     return int(str) + 1000
 
-arr = [[0 for _ in range(2000)] for _ in range(2000)]
+arr = [[0 for _ in range(2001)] for _ in range(2001)]
 
 x1, y1, x2, y2 = map(setting, input().split())
 origin = [x1, y1, x2, y2]
