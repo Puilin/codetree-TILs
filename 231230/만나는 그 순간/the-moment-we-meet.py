@@ -25,8 +25,13 @@ for _ in range(m):
         timestamp_b.append(point)
 
 time = 0
+met = False
 for a, b in zip(timestamp_a, timestamp_b):
     if a == b and a != 0:
         print(time)
+        met = True
         break
     time += 1
+
+if (not met):
+    print(-1)
