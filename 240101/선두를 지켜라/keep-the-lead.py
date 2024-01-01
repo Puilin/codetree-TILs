@@ -21,4 +21,8 @@ count = 0
 for i in range(1, len(a)):
     if (a[i-1] >= b[i-1] and a[i] < b[i]) or (a[i-1] <= b[i-1] and a[i] > b[i]):
         count += 1
-print(count-1) # 출발점이 같기 때문에 무조건 처음에 카운트됨
+
+if count == 0:
+    print(count)
+else:
+    print(count-1) # 출발점이 같기 때문에 무조건 처음에 카운트됨
