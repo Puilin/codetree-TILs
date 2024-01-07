@@ -15,16 +15,18 @@ logs.sort(key=lambda x: x[0])
 shake_count = 0
 for log in logs:
     t, x, y = log
-    # 최초 감염자이면서 악수를 k번보다 적게 했다면
-    if (x == p or y == p) and shake_count < k:
-        arr[x][t] = 1
-        arr[y][t] = 1
-        shake_count += 1
+    # 최초 감염자
+    if (x == p or y == p):
+        if arr[x].count(1) < k+1:
+            arr[x][t] = 1
+        if arr[y].count(1) < k+1:
+            arr[y][t] = 1
     # 둘중 하나가 감염자이면서 악수를 k번보다 적게 했다면
-    elif (arr[x].count(1) > 0 or arr[y].count(1)) and shake_count < k:
-        arr[x][t] = 1
-        arr[y][t] = 1
-        shake_count += 1
+    elif (arr[x].count(1) > 0 or arr[y].count(1) > 0):
+        if arr[x].count(1) < k:
+            arr[x][t] = 1
+        if arr[y].count(1) < k:
+            arr[y][t] = 1
         
 result = []
 for developer in arr:
