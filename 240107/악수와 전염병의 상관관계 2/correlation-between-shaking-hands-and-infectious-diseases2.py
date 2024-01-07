@@ -2,6 +2,9 @@ n, k, p, T = map(int, input().split())
 
 arr = [[0 for _ in range(251)] for _ in range(n+1)]
 
+#최초 감염자
+arr[p][0] = 1
+
 logs = []
 for _ in range(T):
     t, x, y = map(int, input().split())
