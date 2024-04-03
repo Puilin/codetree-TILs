@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
-a_pos = [0] * 1001
-b_pos = [0] * 1001
+a_pos = [0 for _ in range(1001)]
+b_pos = [0 for _ in range(1001)]
 
 now = 1
 for _ in range(n):
