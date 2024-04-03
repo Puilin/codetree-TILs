@@ -1,14 +1,14 @@
 n, m = map(int, input().split())
 
-a_pos = [0 for _ in range(1001)]
-b_pos = [0 for _ in range(1001)]
+a_pos = [0]
+b_pos = [0]
 
 now = 1
 for _ in range(n):
     v, t = map(int, input().split())
 
     for _ in range(t):
-        a_pos[now] = a_pos[now-1] + v
+        a_pos.append(a_pos[now-1] + v)
         now += 1
 
 now = 1
@@ -16,26 +16,16 @@ for _ in range(m):
     v, t = map(int, input().split())
 
     for _ in range(t):
-        b_pos[now] = b_pos[now-1] + v
+        b_pos.append(b_pos[now-1] + v)
         now += 1
 
-leader = ""
+leader = []
 cnt = 0
-for i, (a, b) in enumerate(zip(a_pos, b_pos)):
-    if i == 0:
-        continue
-    if i > 0 and a == 0 and b == 0:
-        break
-    if a < b:
-        if leader != "b":
-            cnt += 1
-        leader = "b"
-    elif a > b:
-        if leader != "a":
-            cnt += 1
-        leader = "a"
-    else:
-        if leader != "ab":
-            cnt += 1
-        leader = "ab"
-print(cnt)
+for i in range(1, len(a_pos)):
+    if a_pos[i] > b_pos[i] and a_pos[i-1] <= b_pos[i-1]:
+        leader.append("a")
+    elif a_pos[i] < b_pos[i] and a_pos[i-1] >= b_pos[i-1]:
+        leader.append("b")
+    elif a_pos[i] == b_pos[i] and a_pos[i-1] != b_pos[i-1]:
+        leader.append("ab")
+print(len(leader))
