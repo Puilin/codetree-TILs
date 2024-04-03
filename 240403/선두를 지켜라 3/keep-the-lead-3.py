@@ -20,18 +20,22 @@ for _ in range(m):
         now += 1
 
 leader = ""
-cnt = -1
+cnt = 0
 for i, (a, b) in enumerate(zip(a_pos, b_pos)):
-    if a > b:
-        if leader != "a" and i != 0:
-            cnt += 1
-        leader = "a"
-    elif a < b:
-        if leader != "b" and i != 0:
+    if i == 0:
+        continue
+    if i > 0 and a == 0 and b == 0:
+        break
+    if a < b:
+        if leader != "b":
             cnt += 1
         leader = "b"
-    elif a == b:
-        if leader != "ab" and i != 0:
+    elif a > b:
+        if leader != "a":
+            cnt += 1
+        leader = "a"
+    else:
+        if leader != "ab":
             cnt += 1
         leader = "ab"
 print(cnt)
