@@ -10,9 +10,9 @@ def start_index(k):
     if k <= n:
         return (0, k-1, 0)
     elif k <= 2*n:
-        return ((k-1)%n, 2, 1)
+        return ((k-1)%n, n-1, 1)
     elif k <= 3*n:
-        return (2, 3*n-k, 2)
+        return (n-1, 3*n-k, 2)
     else:
         return (4*n-k, 0, 3)
 
